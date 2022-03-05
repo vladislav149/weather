@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="main__inner">
+        <div class="main__conteiner">
+          <form class="main__form" action="#">
+            <label class="sr-only">select city</label>
+            <input class="main__input" type="text" required placeholder="enter city">
+            <button class="main__search animation" type="submit"
+              style="background-image: url(images/search.svg);"></button>
+          </form>
+
+          <div class="main__box">
+            <div class="main__content">
+              <div class="main__box-info">
+                <div class="main__info main__main-info" id="tab-1">
+                  <span class="main__temperature">14°</span>
+                  <span class="main__city">Aktobe</span>
+                  <button class="main__btn-heart">
+                    <svg class="main__heart">
+                      <use xlink:href="images/heart.svg#heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="main__info main__short-info" id="tab-2">text 2</div>
+                <div class="main__info main__hourly-info" id="tab-3">text 3</div>
+              </div>
+              <div class="main__box-tabs">
+                <a class="main__tab animation" href="#tab-1">
+                  Now
+                </a>
+                <a class="main__tab animation" href="#tab-2">
+                  Details
+                </a>
+                <a class="main__tab animation" href="#tab-3">
+                  Forecast
+                </a>
+              </div>
+            </div>
+
+            <div class="main__cites">
+              <h3 class="main__title">
+                Added Locations:
+              </h3>
+              <ul class="main__list">
+                <li class="main__item">
+                  <button class="main__btn animation">
+                    Amur
+                  </button>
+                </li>
+                <li class="main__item">
+                  <button class="main__btn animation">
+                    Samara
+                  </button>
+                </li>
+                <li class="main__item">
+                  <button class="main__btn animation">
+                    Bali
+                  </button>
+                </li>
+                <li class="main__item">
+                  <button class="main__btn animation">
+                    Dane
+                  </button>
+                </li>
+                <li class="main__item">
+                  <button class="main__btn animation">
+                    Kilo
+                  </button>
+                </li>
+                <li class="main__item">
+                  <button class="main__btn animation">
+                    Nur-Sultan
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="js/main.js"></script>
+
+</html>

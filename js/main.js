@@ -23,7 +23,7 @@ button.addEventListener('click', sendCity);
 
 async function sendCity() {
   const inputValue = document.querySelector('.main__input').value;
-  const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
+  const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
   const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
   const url = `${serverUrl}?q=${inputValue}&appid=${apiKey}`;
   let response = await fetch(url);

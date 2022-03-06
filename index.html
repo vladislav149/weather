@@ -21,8 +21,11 @@
           <form class="main__form" action="#">
             <label class="sr-only">select city</label>
             <input class="main__input" type="text" required placeholder="enter city">
-            <button class="main__search animation" type="submit"
-              style="background-image: url(images/search.svg);"></button>
+            <button class="main__search animation" type="submit">
+              <svg class="main__search-img">
+                <use xlink:href="images/search.svg#search"></use>
+              </svg>
+            </button>
           </form>
 
           <div class="main__box">
@@ -37,10 +40,94 @@
                     </svg>
                   </button>
                 </div>
-                <div class="main__info main__short-info" id="tab-2">text 2</div>
-                <div class="main__info main__hourly-info" id="tab-3">text 3</div>
+
+                <div class="main__info main__short-info" id="tab-2">
+                  <h3 class="main__info-city">Aktobe</h3>
+                  <ul class="main__info-list">
+                    <li class="main__info-item">Temperature: 14°</li>
+                    <li class="main__info-item">Feels like: 10°</li>
+                    <li class="main__info-item">Weather: Clouds</li>
+                    <li class="main__info-item">Sunrise: 03:21</li>
+                    <li class="main__info-item">Sunset: 18:54</li>
+                  </ul>
+                </div>
+
+                <div class="main__info main__hourly-info" id="tab-3">
+                  <h3 class="main__info-city main__info-city--tab-3">Aktobe</h3>
+                  <article class="card-weather">
+                    <div class="card-weather__top">
+                      <time class="card-weather__date">17 May</time>
+                      <time class="card-weather__time">12:00</time>
+                    </div>
+
+                    <div class="card-weather__bottom">
+                      <div class="card-weather__box">
+                        <span class="card-weather__temperature">Temperature: 13°</span>
+                        <span class="card-weather__temperature">Feels like: 10°</span>
+                      </div>
+
+                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
+                        Rain
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="card-weather">
+                    <div class="card-weather__top">
+                      <time class="card-weather__date">17 May</time>
+                      <time class="card-weather__time">15:00</time>
+                    </div>
+
+                    <div class="card-weather__bottom">
+                      <div class="card-weather__box">
+                        <span class="card-weather__temperature">Temperature: 13°</span>
+                        <span class="card-weather__temperature">Feels like: 10°</span>
+                      </div>
+
+                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
+                        Rain
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="card-weather">
+                    <div class="card-weather__top">
+                      <time class="card-weather__date">17 May</time>
+                      <time class="card-weather__time">18:00</time>
+                    </div>
+
+                    <div class="card-weather__bottom">
+                      <div class="card-weather__box">
+                        <span class="card-weather__temperature">Temperature: 13°</span>
+                        <span class="card-weather__temperature">Feels like: 10°</span>
+                      </div>
+
+                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
+                        Rain
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="card-weather">
+                    <div class="card-weather__top">
+                      <time class="card-weather__date">17 May</time>
+                      <time class="card-weather__time">21:00</time>
+                    </div>
+
+                    <div class="card-weather__bottom">
+                      <div class="card-weather__box">
+                        <span class="card-weather__temperature">Temperature: 13°</span>
+                        <span class="card-weather__temperature">Feels like: 10°</span>
+                      </div>
+
+                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
+                        Rain
+                      </div>
+                    </div>
+                  </article>
+                </div>
               </div>
-              <div class="main__box-tabs">
+              <nav class="main__box-tabs">
                 <a class="main__tab animation" href="#tab-1">
                   Now
                 </a>
@@ -50,7 +137,7 @@
                 <a class="main__tab animation" href="#tab-3">
                   Forecast
                 </a>
-              </div>
+              </nav>
             </div>
 
             <div class="main__cites">

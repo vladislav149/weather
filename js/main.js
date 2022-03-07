@@ -22,7 +22,8 @@ const button = document.querySelector('.main__search');
 button.addEventListener('click', sendCity);
 
 async function sendCity() {
-  const inputValue = document.querySelector('.main__input').value;
+  const input = document.querySelector('.main__input');
+  const inputValue = input.value;
   const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
   const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
   const url = `${serverUrl}?q=${inputValue}&appid=${apiKey}`;
@@ -32,7 +33,8 @@ async function sendCity() {
     const city = document.querySelector('.main__city');
     const temperature = document.querySelector('.main__temperature');
     city.textContent = inputValue[0].toUpperCase() + inputValue.slice(1);
-    temperature.textContent = Math.round(json.main.temp - 271) + '°';
+    temperature.textContent = Math.round(json.main.temp - 273.16) + '°';
+    input.value = '';
   } else {
     alert("Ошибка HTTP: " + response.status);
   }

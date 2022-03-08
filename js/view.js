@@ -1,16 +1,21 @@
-import {
-  sendCity
-} from './main.js'
+export const UI_ELEMENTS = {
+  TABS_BUTTON: document.querySelectorAll('.main__tab'),
+  TABS_INFO: document.querySelectorAll('.main__info'),
+  FORM_SUBMIT: document.querySelector('.main__form'),
+  TEMPERATURE: document.querySelector('.main__temperature'),
+  CITY: document.querySelectorAll('.main__city'),
+  INPUT_CITY: document.querySelector('.main__input')
+}
 
-document.querySelectorAll('.main__tab').forEach(item =>
+UI_ELEMENTS.TABS_BUTTON.forEach(item =>
   item.addEventListener('click', function (e) {
     e.preventDefault();
-    const id = e.target.getAttribute('href').replace('#', '');
+    const id = this.getAttribute('href').replace('#', '');
 
-    document.querySelectorAll('.main__tab').forEach(
+    UI_ELEMENTS.TABS_BUTTON.forEach(
       elem => elem.classList.remove('main__tab--active')
     );
-    document.querySelectorAll('.main__info').forEach(
+    UI_ELEMENTS.TABS_INFO.forEach(
       elem => elem.classList.remove('main__info--active')
     );
 
@@ -21,6 +26,6 @@ document.querySelectorAll('.main__tab').forEach(item =>
 
 document.querySelector('.main__tab').click();
 
-
-const button = document.querySelector('.main__search');
-button.addEventListener('click', sendCity);
+export function resetInput() {
+  UI_ELEMENTS.INPUT_CITY.value = '';
+}

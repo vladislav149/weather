@@ -114,7 +114,6 @@ body {
 }
 
 .main__main-info {
-  position: relative;
   height: 100%;
   background-image: url(../images/cloud-1.jpg);
   background-repeat: no-repeat;
@@ -122,24 +121,29 @@ body {
   background-size: 78px 59px;
 }
 
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 26px 17px 12px;
+  height: 100%;
+}
+
 .main__temperature {
-  position: absolute;
-  left: 23px;
-  top: 20px;
   font-size: 70px;
 }
 
+.main__case {
+  display: flex;
+  justify-content: space-between;
+}
+
 .main__city {
-  position: absolute;
-  left: 12px;
-  bottom: 17px;
   font-size: 24px;
+  font-weight: 400;
 }
 
 .main__btn-heart {
-  position: absolute;
-  right: 15px;
-  bottom: 10px;
   width: 44px;
   height: 44px;
 }
@@ -161,8 +165,6 @@ body {
 
 .main__info-city {
   margin-bottom: 42px;
-  font-size: 24px;
-  font-weight: 400;
 }
 
 .main__info-item:not(:last-child) {

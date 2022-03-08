@@ -32,17 +32,21 @@
             <div class="main__content">
               <div class="main__box-info">
                 <div class="main__info main__main-info" id="tab-1">
-                  <span class="main__temperature">14°</span>
-                  <span class="main__city">Aktobe</span>
-                  <button class="main__btn-heart">
-                    <svg class="main__heart">
-                      <use xlink:href="images/heart.svg#heart"></use>
-                    </svg>
-                  </button>
+                  <div class="box">
+                    <span class="main__temperature">14°</span>
+                    <div class="main__case">
+                      <h3 class="main__city">Aktobe</h3>
+                      <button class="main__btn-heart" type="button">
+                        <svg class="main__heart">
+                          <use xlink:href="images/heart.svg#heart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="main__info main__short-info" id="tab-2">
-                  <h3 class="main__info-city">Aktobe</h3>
+                  <h3 class="main__info-city main__city">Aktobe</h3>
                   <ul class="main__info-list">
                     <li class="main__info-item">Temperature: 14°</li>
                     <li class="main__info-item">Feels like: 10°</li>
@@ -53,7 +57,7 @@
                 </div>
 
                 <div class="main__info main__hourly-info" id="tab-3">
-                  <h3 class="main__info-city main__info-city--tab-3">Aktobe</h3>
+                  <h3 class="main__info-city main__city main__info-city--tab-3">Aktobe</h3>
                   <article class="card-weather">
                     <div class="card-weather__top">
                       <time class="card-weather__date">17 May</time>
@@ -146,32 +150,32 @@
               </h3>
               <ul class="main__list">
                 <li class="main__item">
-                  <button class="main__btn animation">
+                  <button class="main__btn animation" type="button">
                     Amur
                   </button>
                 </li>
                 <li class="main__item">
-                  <button class="main__btn animation">
+                  <button class="main__btn animation" type="button">
                     Samara
                   </button>
                 </li>
                 <li class="main__item">
-                  <button class="main__btn animation">
+                  <button class="main__btn animation" type="button">
                     Bali
                   </button>
                 </li>
                 <li class="main__item">
-                  <button class="main__btn animation">
+                  <button class="main__btn animation" type="button">
                     Dane
                   </button>
                 </li>
                 <li class="main__item">
-                  <button class="main__btn animation">
+                  <button class="main__btn animation" type="button">
                     Kilo
                   </button>
                 </li>
                 <li class="main__item">
-                  <button class="main__btn animation">
+                  <button class="main__btn animation" type="button">
                     Nur-Sultan
                   </button>
                 </li>
@@ -183,6 +187,6 @@
     </div>
   </main>
 </body>
-<script type="module" src="js/view.js"></script>
+<script type="module" src="js/main.js"></script>
 
 </html>

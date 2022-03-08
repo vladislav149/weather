@@ -29,3 +29,9 @@ document.querySelector('.main__tab').click();
 export function resetInput() {
   UI_ELEMENTS.INPUT_CITY.value = '';
 }
+
+export function showInfo(data) {
+  data.then(response => UI_ELEMENTS.TEMPERATURE.textContent = Math.round(response.main.temp - 273.16) + '°')
+  data.then(response => UI_ELEMENTS.CITY.forEach(city => city.textContent = response.name))
+  data.catch(err => console.log('hi', err))
+}

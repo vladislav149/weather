@@ -1,5 +1,6 @@
 import {
   UI_ELEMENTS,
+  showInfo,
   resetInput
 } from './view.js'
 
@@ -12,7 +13,7 @@ UI_ELEMENTS.FORM_SUBMIT.addEventListener('submit', getWeather);
 
 function getWeather(e) {
   e.preventDefault();
-  showInfo();
+  showInfo(getJSON());
   resetInput();
 }
 
@@ -24,13 +25,12 @@ function getJSON() {
   const city = getCity(UI_ELEMENTS.INPUT_CITY);
   const url = `${SERVER.URL}?q=${city}&appid=${SERVER.API_KEY}`;
   return fetch(url)
-    .then(response => response.json())
-    .catch(err => console.log(err))
-}
-
-function showInfo() {
-  const json = getJSON()
-  json.then(response => UI_ELEMENTS.TEMPERATURE.textContent = Math.round(response.main.temp - 273.16) + '°')
-  json.then(response => UI_ELEMENTS.CITY.forEach(city => city.textContent = response.name))
-  json.catch(err => console.log(err))
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        alert('Некорректный город')
+      }
+    })
+    .catch(err => alert('Ошибка url', err))
 }

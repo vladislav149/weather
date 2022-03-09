@@ -45,7 +45,7 @@ body {
   padding: 12px 10px;
 }
 
-.main__conteiner {
+.main__container {
   border: 1px solid #000000;
   min-height: 435px;
 }
@@ -68,20 +68,14 @@ body {
 .main__search {
   width: 45px;
   height: 100%;
+  background-image: url(../images/search.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
 }
 
-.main__search:hover .main__search-img {
-  fill: #ffffff
-}
-
-.main__search:active.main__search-img {
-  fill: #ffffff
-}
-
-.main__search-img {
-  fill: #000000;
-  width: 30px;
-  height: 30px;
+.main__search:hover {
+  filter: invert(100%) sepia(4%) saturate(165%) hue-rotate(125deg) brightness(115%) contrast(100%);
 }
 
 .main__box {
@@ -152,10 +146,18 @@ body {
   stroke: red;
 }
 
+.main__btn-heart--active .main__heart {
+  stroke: red;
+  fill: red;
+}
+
 .main__heart {
   stroke: #000000;
+  fill: transparent;
   width: 24px;
   height: 25px;
+  transition: stroke 0.3s,
+    fill 0.3s;
 }
 
 .main__short-info {
@@ -210,21 +212,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .main__box-tabs {
   display: flex;
 }
@@ -266,10 +253,51 @@ body {
 
 .main__list {
   padding: 28px 5px 5px 18px;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 320px;
+}
+
+.main__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.main__item {
+  display: flex;
+}
+
+.main__item:hover .main__delete {
+  display: block;
 }
 
 .main__btn {
   padding: 7px 0;
   width: 100%;
   text-align: left;
+}
+
+.main__delete {
+  display: none;
+  position: relative;
+  padding: 7px 0;
+  width: 44px;
+}
+
+.main__delete::before,
+.main__delete::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: #000000;
+  left: 0;
+}
+
+.main__delete::before {
+  transform: rotate(45deg);
+}
+
+.main__delete::after {
+  transform: rotate(135deg);
 }

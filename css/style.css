@@ -112,7 +112,7 @@ body {
   background-image: url(../images/cloud-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 78px 59px;
+  background-size: 80px;
 }
 
 .box {
@@ -242,6 +242,7 @@ body {
   flex-basis: 50%;
   font-size: 24px;
   line-height: 1.17;
+  height: 389px;
 }
 
 .main__title {
@@ -252,11 +253,11 @@ body {
 }
 
 .main__list {
-  padding: 28px 5px 5px 18px;
+  padding: 10px 5px 5px 18px;
   overflow: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  height: 320px;
+  height: 292px;
 }
 
 .main__list::-webkit-scrollbar {
@@ -290,7 +291,7 @@ body {
   content: "";
   width: 25px;
   height: 2px;
-  background-color: #000000;
+  background-color: #ffffff;
   left: 0;
 }
 

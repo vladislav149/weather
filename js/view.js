@@ -1,17 +1,8 @@
-export const UI_ELEMENTS = {
-  TABS_BUTTON: document.querySelectorAll('.main__tab'),
-  TABS_INFO: document.querySelectorAll('.main__info'),
-  FORM_SUBMIT: document.querySelector('.main__form'),
-  TEMPERATURE: document.querySelector('.main__temperature'),
-  CITY: document.querySelectorAll('.main__city'),
-  INPUT_CITY: document.querySelector('.main__input'),
-  BUTTON_LIKE: document.querySelector('.main__btn-heart'),
-  LIST_FAVORITE_CITY: document.querySelector('.main__list'),
-  CITY_BUTTON: document.querySelectorAll('.main__btn'),
-  CITY_DELETE_BUTTON: document.querySelectorAll('.main__delete')
-}
-
-export const favoriteCity = ['Amur Oblast', 'Samara Oblast', 'Bali', 'Dane', 'Kilo', 'Nur-Sultan'];
+import {
+  UI_ELEMENTS,
+  favoriteCity,
+  SERVER
+} from './consts.js'
 
 UI_ELEMENTS.TABS_BUTTON.forEach(item =>
   item.addEventListener('click', function (e) {
@@ -37,7 +28,13 @@ export function resetInput() {
 }
 
 export function showInfo(data) {
-  data.then(response => UI_ELEMENTS.TEMPERATURE.textContent = Math.round(response.main.temp - 273.16) + '°')
+  data.then(response => UI_ELEMENTS.TEMPERATURE.textContent = Math.round(response.main.temp) + '°')
+  data.then(response => UI_ELEMENTS.DETAILS.TEMPERATURE.textContent = Math.round(response.main.temp) + '°')
+  data.then(response => UI_ELEMENTS.DETAILS.FEELS_LIKE.textContent = Math.round(response.main.feels_like) + '°')
+  data.then(response => UI_ELEMENTS.DETAILS.WEATHER.textContent = response.weather[0].main)
+  data.then(response => UI_ELEMENTS.DETAILS.SUNRISE.textContent = timeConverter(response.sys.sunrise))
+  data.then(response => UI_ELEMENTS.DETAILS.SUNSET.textContent = timeConverter(response.sys.sunset))
+  data.then(response => UI_ELEMENTS.WEATHER_ICON.style['background-image'] = `url(${SERVER.ICON}${response.weather[0].icon}.png)`)
   data.then(response => UI_ELEMENTS.CITY.forEach(city => {
     city.textContent = response.name;
     const checkCity = favoriteCity.find(elem => elem === response.name)
@@ -52,7 +49,7 @@ export function showInfo(data) {
 
 export function addFavoriteCite(nameCity) {
   UI_ELEMENTS.LIST_FAVORITE_CITY.insertAdjacentHTML('beforeend',
-    `<li class="main__item">
+    `<li class="main__item animation">
       <button class="main__btn" type="button">${nameCity}</button>
       <button class="main__delete" type="button"></button>
     </li>`
@@ -67,4 +64,17 @@ export function deleteFavoriteCity(nameCity) {
       }
     }
   )
+}
+
+function timeConverter(unix) {
+  const date = new Date(unix * 1000);
+  let hour = String(date.getHours());
+  if (hour.length === 1) {
+    hour = 0 + hour
+  }
+  let minute = String(date.getMinutes());
+  if (minute.length === 1) {
+    minute = 0 + minute
+  }
+  return hour + ':' + minute;
 }

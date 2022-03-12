@@ -109,7 +109,7 @@ body {
 
 .main__main-info {
   height: 100%;
-  background-image: url(../images/cloud-1.jpg);
+  background-image: url(../images/images.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80px;
@@ -181,16 +181,16 @@ body {
   margin-bottom: 7px;
 }
 
+.main__hourly-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
 .card-weather {
   display: flex;
   flex-direction: column;
   border: 1px solid #000000;
   padding: 6px 10px 9px 8px;
   height: 120px;
-}
-
-.card-weather:not(:last-child) {
-  margin-bottom: 9px;
 }
 
 .card-weather__top {
@@ -205,12 +205,12 @@ body {
 }
 
 .card-weather__box {
-  max-width: 140px;
+  max-width: 145px;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: bottom right;
+  background-size: 40px;
   height: 47px;
 }
-
 
 .main__box-tabs {
   display: flex;

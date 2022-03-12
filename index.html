@@ -27,11 +27,11 @@
           <div class="main__box">
             <div class="main__content">
               <div class="main__box-info">
-                <div class="main__info main__main-info" id="tab-1">
+                <div class="main__info main__main-info main__info--active" id="tab-1">
                   <div class="box">
-                    <span class="main__temperature">14°</span>
+                    <span class="main__temperature"></span>
                     <div class="main__case">
-                      <h3 class="main__city">Aktobe</h3>
+                      <h3 class="main__city"></h3>
                       <button class="main__btn-heart" type="button">
                         <svg class="main__heart">
                           <use xlink:href="images/heart.svg#heart"></use>
@@ -42,93 +42,23 @@
                 </div>
 
                 <div class="main__info main__short-info" id="tab-2">
-                  <h3 class="main__info-city main__city">Aktobe</h3>
+                  <h3 class="main__info-city main__city"></h3>
                   <ul class="main__info-list">
-                    <li class="main__info-item">Temperature: <span id="temperature">14°</span></li>
-                    <li class="main__info-item">Feels like: <span id="feels-like">10°</span></li>
-                    <li class="main__info-item">Weather: <span id="weather">Clouds</span></li>
-                    <li class="main__info-item">Sunrise: <span id="sunrise">03:21</span></li>
-                    <li class="main__info-item">Sunset: <span id="sunset">18:54</span></li>
+                    <li class="main__info-item">Temperature: <span id="temperature"></span></li>
+                    <li class="main__info-item">Feels like: <span id="feels-like"></span></li>
+                    <li class="main__info-item">Weather: <span id="weather"></span></li>
+                    <li class="main__info-item">Sunrise: <span id="sunrise"></span></li>
+                    <li class="main__info-item">Sunset: <span id="sunset"></span></li>
                   </ul>
                 </div>
 
                 <div class="main__info main__hourly-info" id="tab-3">
-                  <h3 class="main__info-city main__city main__info-city--tab-3">Aktobe</h3>
-                  <article class="card-weather">
-                    <div class="card-weather__top">
-                      <time class="card-weather__date">17 May</time>
-                      <time class="card-weather__time">12:00</time>
-                    </div>
-
-                    <div class="card-weather__bottom">
-                      <div class="card-weather__box">
-                        <span class="card-weather__temperature">Temperature: 13°</span>
-                        <span class="card-weather__temperature">Feels like: 10°</span>
-                      </div>
-
-                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
-                        Rain
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="card-weather">
-                    <div class="card-weather__top">
-                      <time class="card-weather__date">17 May</time>
-                      <time class="card-weather__time">15:00</time>
-                    </div>
-
-                    <div class="card-weather__bottom">
-                      <div class="card-weather__box">
-                        <span class="card-weather__temperature">Temperature: 13°</span>
-                        <span class="card-weather__temperature">Feels like: 10°</span>
-                      </div>
-
-                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
-                        Rain
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="card-weather">
-                    <div class="card-weather__top">
-                      <time class="card-weather__date">17 May</time>
-                      <time class="card-weather__time">18:00</time>
-                    </div>
-
-                    <div class="card-weather__bottom">
-                      <div class="card-weather__box">
-                        <span class="card-weather__temperature">Temperature: 13°</span>
-                        <span class="card-weather__temperature">Feels like: 10°</span>
-                      </div>
-
-                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
-                        Rain
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="card-weather">
-                    <div class="card-weather__top">
-                      <time class="card-weather__date">17 May</time>
-                      <time class="card-weather__time">21:00</time>
-                    </div>
-
-                    <div class="card-weather__bottom">
-                      <div class="card-weather__box">
-                        <span class="card-weather__temperature">Temperature: 13°</span>
-                        <span class="card-weather__temperature">Feels like: 10°</span>
-                      </div>
-
-                      <div class="card-weather__box" style="background-image:url(images/rain-1.jpg)">
-                        Rain
-                      </div>
-                    </div>
-                  </article>
+                  <h3 class="main__info-city main__city main__info-city--tab-3"></h3>
+                  <ul class="main__hourly-list"></ul>
                 </div>
               </div>
               <nav class="main__box-tabs">
-                <a class="main__tab animation" href="#tab-1">
+                <a class="main__tab main__tab--active animation" href="#tab-1">
                   Now
                 </a>
                 <a class="main__tab animation" href="#tab-2">

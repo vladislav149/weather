@@ -10,6 +10,7 @@ export const UI_ELEMENTS = {
   CITY_BUTTON: document.querySelectorAll('.main__btn'),
   CITY_DELETE_BUTTON: document.querySelectorAll('.main__delete'),
   WEATHER_ICON: document.querySelector('.main__main-info'),
+  HOURLY_INFO: document.querySelector('.main__hourly-list'),
   DETAILS: {
     TEMPERATURE: document.getElementById('temperature'),
     FEELS_LIKE: document.getElementById('feels-like'),
@@ -19,12 +20,14 @@ export const UI_ELEMENTS = {
   }
 }
 
-
-
+export const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 export const favoriteCity = ['Amur Oblast', 'Samara Oblast', 'Bali', 'Dane', 'Kilo', 'Nur-Sultan'];
 
 export const SERVER = {
-  URL: 'https://api.openweathermap.org/data/2.5/weather',
-  API_KEY: 'f660a2fb1e4bad108d6160b7f58c555f',
+  URL: {
+    CURRENT: 'https://api.openweathermap.org/data/2.5/weather',
+    HOURLY: 'https://api.openweathermap.org/data/2.5/forecast'
+  },
+  API_KEY: '3d8af9f7ae111ad0770a6a9d37546134',
   ICON: 'http://openweathermap.org/img/w/'
 }

@@ -29,5 +29,5 @@ export const SERVER = {
     HOURLY: 'https://api.openweathermap.org/data/2.5/forecast'
   },
   API_KEY: '3d8af9f7ae111ad0770a6a9d37546134',
-  ICON: 'http://openweathermap.org/img/w/'
+  ICON: 'https://openweathermap.org/img/w/'
 }

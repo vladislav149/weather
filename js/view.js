@@ -5,6 +5,10 @@ import {
   MONTHS
 } from './consts.js'
 
+import {
+  saveCurrentCity
+} from './localStorage.js';
+
 UI_ELEMENTS.TABS_BUTTON.forEach(item =>
   item.addEventListener('click', function (e) {
     e.preventDefault();
@@ -44,6 +48,7 @@ export function showInfo(data) {
         UI_ELEMENTS.BUTTON_LIKE.classList.remove('main__btn-heart--active');
       }
     });
+    saveCurrentCity(UI_ELEMENTS.CITY);
   })
   data.catch(err => console.log('hi', err))
 }

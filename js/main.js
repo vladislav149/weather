@@ -3,6 +3,9 @@ import {
   favoriteCity,
   SERVER
 } from './consts.js'
+import {
+  outputSaveCity
+} from './localStorage.js';
 
 import {
   showInfo,
@@ -86,3 +89,9 @@ function deleteCity() {
   favoriteCity.splice(isThereACity, 1);
   UI_ELEMENTS.BUTTON_LIKE.classList.remove('main__btn-heart--active');
 }
+
+outputSaveCity();
+deleteForecast();
+showInfo(getJSON(SERVER.URL.CURRENT));
+showInfoHourly(getJSON(SERVER.URL.HOURLY));
+resetInput();

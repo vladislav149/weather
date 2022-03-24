@@ -21,7 +21,10 @@ export const UI_ELEMENTS = {
 }
 
 export const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-export const favoriteCity = ['Amur Oblast', 'Samara Oblast', 'Bali', 'Dane', 'Kilo', 'Nur-Sultan'];
+export let favoriteCity = [];
+if (localStorage.getItem('qwer')) {
+  favoriteCity = localStorage.getItem('qwer').split(',');
+}
 
 export const SERVER = {
   URL: {

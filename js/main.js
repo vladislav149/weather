@@ -4,7 +4,9 @@ import {
   SERVER
 } from './consts.js'
 import {
-  outputSaveCity
+  outputSaveCity,
+  outputSaveFavoriteCities,
+  saveFavoriteCities
 } from './localStorage.js';
 
 import {
@@ -24,6 +26,8 @@ UI_ELEMENTS.CITY_BUTTON.forEach(item => {
 UI_ELEMENTS.CITY_DELETE_BUTTON.forEach(item => {
   item.addEventListener('click', deleteCity)
 });
+
+
 
 
 function getWeather(e) {
@@ -72,6 +76,7 @@ function changeListFavoriteCity() {
     const deleteNewFavoriteCity = UI_ELEMENTS.LIST_FAVORITE_CITY.lastChild.querySelector('.main__delete');
     deleteNewFavoriteCity.addEventListener("click", deleteCity);
   }
+  saveFavoriteCities();
 }
 
 function showThisCity() {
@@ -88,6 +93,20 @@ function deleteCity() {
   let isThereACity = favoriteCity.findIndex(elem => elem === city);
   favoriteCity.splice(isThereACity, 1);
   UI_ELEMENTS.BUTTON_LIKE.classList.remove('main__btn-heart--active');
+  saveFavoriteCities();
+}
+
+function addFavoriteCitiesFromLocalStorage() {
+  if (favoriteCity) {
+    favoriteCity.forEach((city) => {
+      addFavoriteCite(city)
+      const newFavoriteCity = UI_ELEMENTS.LIST_FAVORITE_CITY.lastChild.querySelector('.main__btn');
+      newFavoriteCity.addEventListener("click", showThisCity);
+
+      const deleteNewFavoriteCity = UI_ELEMENTS.LIST_FAVORITE_CITY.lastChild.querySelector('.main__delete');
+      deleteNewFavoriteCity.addEventListener("click", deleteCity);
+    });
+  }
 }
 
 outputSaveCity();
@@ -95,3 +114,5 @@ deleteForecast();
 showInfo(getJSON(SERVER.URL.CURRENT));
 showInfoHourly(getJSON(SERVER.URL.HOURLY));
 resetInput();
+outputSaveFavoriteCities();
+addFavoriteCitiesFromLocalStorage();

@@ -1,5 +1,6 @@
 import {
-  UI_ELEMENTS
+  UI_ELEMENTS,
+  favoriteCity
 } from "./consts.js";
 
 export function saveCurrentCity(city) {
@@ -11,4 +12,13 @@ export function outputSaveCity() {
     localStorage.setItem('city', "Vladikavkaz")
   }
   UI_ELEMENTS.INPUT_CITY.value = localStorage.getItem('city');
+}
+
+export function saveFavoriteCities() {
+  localStorage.setItem('qwer', favoriteCity.join(','));
+  console.log(localStorage.getItem('qwer').split(','));
+}
+
+export function outputSaveFavoriteCities() {
+  //console.log(localStorage.getItem('qwer').split(','));
 }

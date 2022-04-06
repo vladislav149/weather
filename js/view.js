@@ -50,7 +50,7 @@ export function showInfo(data) {
     });
     saveCurrentCity(UI_ELEMENTS.CITY);
   })
-  data.catch(err => console.log('hi', err))
+  data.catch(err => console.log('error', err))
 }
 
 export function showInfoHourly(data) {
@@ -65,7 +65,7 @@ export function showInfoHourly(data) {
       addForecast(date, time, temperature, feelsLike, icon, weather);
     }
   })
-  data.catch(err => console.log('hi', err))
+  data.catch(err => console.log('error', err))
 }
 
 export function addFavoriteCite(nameCity) {

@@ -15,10 +15,5 @@ export function outputSaveCity() {
 }
 
 export function saveFavoriteCities() {
-  localStorage.setItem('qwer', favoriteCity.join(','));
-  console.log(localStorage.getItem('qwer').split(','));
-}
-
-export function outputSaveFavoriteCities() {
-  //console.log(localStorage.getItem('qwer').split(','));
+  localStorage.setItem('favoriteCity', favoriteCity.join(','));
 }

@@ -5,7 +5,6 @@ import {
 } from './consts.js'
 import {
   outputSaveCity,
-  outputSaveFavoriteCities,
   saveFavoriteCities
 } from './localStorage.js';
 
@@ -114,5 +113,4 @@ deleteForecast();
 showInfo(getJSON(SERVER.URL.CURRENT));
 showInfoHourly(getJSON(SERVER.URL.HOURLY));
 resetInput();
-outputSaveFavoriteCities();
 addFavoriteCitiesFromLocalStorage();
